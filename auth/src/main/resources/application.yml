@@ -1,0 +1,17 @@
+server:
+  port: 5555
+
+spring:
+  application:
+    name: gateway
+
+jwtproperties:
+  auth:
+    tokenSecret: secret
+    tokenExpirationMsec: 300000
+
+zuul:
+  routes:
+   employee:
+      url: http://localhost:8087/employee/
+      path: /employee/**   
